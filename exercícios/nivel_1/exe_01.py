@@ -1,4 +1,4 @@
 """
-Faça um programa que mostre na tela a frase Olá Mundo!
+Faça um programa que mostra na tela a frase Olá Mundo!
 """
 
