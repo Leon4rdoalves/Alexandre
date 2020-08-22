@@ -19,7 +19,8 @@ Sintaxe >>> for item in iteravel:
 
 # Exemplo 1
 
-'''taxa = 0.1
+'''
+taxa = 0.1
 
 valor = float(input('Digite o valor inicial: '))
 mes = int(input('Em quantos meses deseja fazer a retirada: '))
@@ -31,7 +32,9 @@ for cont in range(mes):
 
     valor += calc
 
-    print(f'Retirada no {cont + 1}º mês: R${valor:.2f}')'''
+    print(f'Retirada no {cont + 1}º mês: R${valor:.2f}')
+
+'''
 
 # Exemplo 2
 '''

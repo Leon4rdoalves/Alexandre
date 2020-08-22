@@ -10,24 +10,7 @@ Pós perguntas, o programa deve mostrar o grau de participação do usuário no 
 Se a pessoa responder: Se a pessoa responder sim em 2 questões, ela deve ser classificada
 como “Suspeita”, entre 3 e 4 como “Cúmplice” e 5 ou 6 como “Assassina”.
 """
-from time import sleep
 
-print('*' * 60)
-print('PROGRAMA DETETIVE'.center(60))
-print('*' * 60)
-sleep(1)
-print('\n\033[32m', '...por favor, aguarde. Instruções sendo carregadas...'.center(60), '\033[m')
-sleep(3)
-print('\033[1;31m\n', 'ATENÇÃO'.center(60), '\033[m')
-print('''
-Responda as perguntas apenas com: S para sim ou N para não.
-Qualquer resposta diferente destas citadas acima, anulará 
-imediatamente o teste.'''.center(60))
-sleep(3)
-print('\n\033[34m', '...Carregando perguntas...'.center(60), '\033[m')
-
-
-sleep(6)
 a = str(input('\n\033[mEsteve no local do crime? ')).strip().lower()
 b = str(input('Devia para a vítima? ')).strip().lower()
 c = str(input('Mora perto da vítima? ')).strip().lower()
@@ -35,4 +18,29 @@ d = str(input('Já trabalhou com a vitíma? ')).strip().lower()
 e = str(input('Telefonou para a vítima: ')).strip().lower()
 f = str(input('Está tenso? ')).strip().lower()
 
+if a == 's' and b == 's' and c == 's' and d == 's' and e == 's' and f == 's':
+    status = 6
+elif a == 's' and b == 's' and c == 's' and d == 's' and e == 's':
+    status = 5
+elif a == 's' and b == 's' and c == 's' and d == 's':
+    status = 4
+elif a == 's' and b == 's' and c == 's':
+    status = 3
+elif a == 's' and b == 's':
+    status = 2
+elif a == 's':
+    status = 1
+else:
+    status = 0
 
+if (status > 0) and (status <= 2):
+    resp = 'Suspeito!'
+elif (status >= 3) and (status <= 4):
+    resp = 'Cúmplice!'
+elif (status >= 5) and (status <= 6):
+    resp = 'Assassino!'
+else:
+    resp = 'Inocente.'
+
+print(status)
+print(resp)
